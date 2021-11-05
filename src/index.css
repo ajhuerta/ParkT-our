@@ -1,0 +1,188 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #1e427c;
+}
+
+.header .links{
+  margin: 0 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.showcase{
+  background: url('./assets/valley.jpg') no-repeat center/cover;
+  height: 650px;
+}
+
+.showcase .overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 650px;
+  color: #fff;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.showcase .overlay h1{
+  font-size: 36px;
+  padding-bottom: 20px;
+}
+
+.grid {
+  padding: 50px;
+}
+
+.grid h3 {
+  text-align: center;
+  font-size: 30px;
+  color: #333;
+  padding-bottom: 20px;
+}
+
+.grid .grid-items div{
+  background-color: #f1f1f1;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+.grid .grid-items div img{
+  border-radius: 10px;
+}
+.grid .grid-items div h4{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+.grid .grid-items div p{
+  line-height: 1.8;
+}
+
+.footer {
+  background-color: #333;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer ul li {
+  margin: 10px 0;
+}
+
+.footer ul li button {
+  background-color: transparent;
+  color: #fff;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  letter-spacing: 1px;
+  transition: background-color 0.4s ease-in-out 0.4s;
+  cursor: pointer;
+}
+
+.footer ul li button:hover{
+  background-color: #1e427c;
+}
+
+@media (min-width: 768px) {
+  .showcase .overlay h1 {
+    font-size: 64px;
+  }
+
+  .showcase .overlay p {
+    font-size: 22px;
+  }
+
+  .grid .grid-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .grid .grid-items div img{
+    height: 150px;
+    width: 300px;
+  }
+}
+
+/* Login */ 
+.login .form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login .form input {
+  margin: 8px 0;
+  width: 80vw;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #000;
+}
+
+.login .form input::placeholder{
+  font-weight: 800;
+  color: #000;
+}
+
+.login .form button {
+  background-color: #1e427c;
+  color: #fff;
+  padding: 8px;
+  border: 2px solid #1e427c;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.4s;
+  margin-top: 8px;
+  letter-spacing: 2px;
+}
+
+.login .form button:hover {
+  cursor: pointer;
+  background-color: transparent;
+}
+@media (min-width: 992px) {
+  .showcase {
+    background-position: top;
+  }
+
+  .grid .grid-items {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
+
+  .login .form input {
+    width: 50vw;
+  }
+}
