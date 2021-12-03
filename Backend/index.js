@@ -7,7 +7,7 @@ const mysql = require("mysql");
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'password',
+  password: 'D3@3v3i3d',
   database: 'cs411',
   multipleStatements: true
 });
@@ -53,6 +53,7 @@ app.post("/api/PlanConfirm", (req, res) => {
         if(err) throw err;
         
         console.log(result);
+        res.json({ message: "User Plan is received" });
 
     });
 });
@@ -130,6 +131,7 @@ app.post("/api/user-delete", (req, res) => {
     connection.query(sqlDeleteUser, [userID], (err, result) => {
         if(err) throw err;
         console.log(result);
+        res.json({message: "User Account is deleted" });
     });
 });
 
@@ -195,6 +197,7 @@ app.post("/api/change-email", (req, res) => {
         if(err) throw err;
 
         console.log(result);
+        res.json({message: "User Email is changed" });
     });
 });
 /*
