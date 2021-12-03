@@ -3,7 +3,7 @@ import React from 'react'
 const Error = () => {
     return(
         <div className = 'showcase' style = {{height: '650px', display: 'flex', alignItems:
-        'center', color: '#fff', fontSize: '30px', backgroundColor: '#333', fontSize: '30px',
+        'center', color: '#fff', fontSize: '30px', backgroundColor: '#333',
         textAlign: 'center'}}>
 
             <div className = 'overlay'>

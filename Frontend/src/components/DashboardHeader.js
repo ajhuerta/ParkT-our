@@ -6,11 +6,12 @@ const DashboardHeader = () => {
         <>
             <header className="header">
                 <div>
-                    <Link className = "links" to = "/profile">My Home</Link>
+                    <Link className = "links" to = "/search-engine">Search Engine</Link>
                 </div>
 
                 <nav className = "navbar">
                     <ul>
+                        <Link className = "links" to = "/">Log Out</Link>
                         <Link className = "links" to = "/my-plans">My plans</Link>
                         <Link className = "links" to = "/park-activities"> Park activity matcher</Link>
                         <Link className = "links" to = "/manage-account">Manage Account</Link>

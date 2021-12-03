@@ -12,6 +12,7 @@ import DashboardHeader from './components/DashboardHeader'
 import UserPlans from './components/UserPlans'
 import UserActivityMatcher from './components/UserActivityMatcher'
 import UserManageAccount from './components/UserManageAccount'
+import SearchEngine from './components/SearchEngine'
 
 function App() {
   return (
@@ -50,6 +51,11 @@ function App() {
       <Route path = '/park-activities'>
         <DashboardHeader/>
         <UserActivityMatcher/>
+      </Route>
+
+      <Route path = '/search-engine'>
+        <DashboardHeader/>
+        <SearchEngine/>
       </Route>
 
       <Route path = '/manage-account'>
