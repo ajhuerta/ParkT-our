@@ -7,14 +7,15 @@ const UserPlans = () => {
     const [email, setEmail] = useState("");
     const [ParkCode, setParkCode] = useState("");
     const [Confirm_Date, setConfirm_Date] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const PlanConfirm = () => {
         Axios.post('http://localhost:3001/api/PlanConfirm', {
             UserID: UserID, 
             ParkCode: ParkCode, 
             Confirm_Date: Confirm_Date,
-            email: email}).then(() => {
-            alert("successful insert");
+            email: email}).then((response) => {
+                setErrorMessage(response.data.message);
         });
     };
 
@@ -46,6 +47,7 @@ const UserPlans = () => {
                         placeholder = "Enter ParkCode You want to go" required/>
 
                         <button type = "submit" onClick = {PlanConfirm} >Plan Confirmed</button>
+                        <h1>{errorMessage} </h1>
                         
                     </div>
                 </div>

@@ -8,12 +8,13 @@ const UserManageAccount = () => {
     //used to change the email associated with a user
     const [newEmail, setNewEmail] = useState(""); 
     const [confirmUserID, setConfirmUserID] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     //function to delete a user form the database
     const deleteUser = () => {
         Axios.post('http://localhost:3001/api/user-delete', {
-            userID: userID}).then(() => {
-            alert("user has been deleted");
+            userID: userID}).then((response) => {
+                setErrorMessage(response.data.message);
         });
     };
 
@@ -21,24 +22,25 @@ const UserManageAccount = () => {
     const updateEmail = () => {
         Axios.post('http://localhost:3001/api/change-email', {
             confirmUserID: confirmUserID,
-            newEmail: newEmail}).then(() => {
-                alert("user has changed email address");
+            newEmail: newEmail}).then((response) => {
+                setErrorMessage(response.data.message);
             });
     }
 
     return (
         <>
             <h1>DELETE ACCCOUNT</h1>
-            <form className="form"> 
+            <div className="form"> 
             <input type = "text" name = "userID" id = "userID" onChange = {(e) => {
                             setUserID(e.target.value);
                         }}
                         placeholder = "Enter UserID" required/>
                 <button type = "submit" onClick = {deleteUser} >Submit Changes</button>
-            </form>
+                
+            </div>
 
             <h1>UPDATE Email</h1>
-            <form className="form"> 
+            <div className="form"> 
             <input type = "text" name = "userID" id = "userID" onChange = {(e) => {
                             setConfirmUserID(e.target.value);
                         }}
@@ -49,7 +51,8 @@ const UserManageAccount = () => {
                         }}
                         placeholder = "Enter New Email" required/>
                 <button type = "submit" onClick = {updateEmail} >Submit Changes</button>
-            </form>
+                <h1 style={{ color: "red" }}>{errorMessage} </h1>
+            </div>
         </>
     )
 }
